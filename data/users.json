@@ -1,0 +1,26 @@
+[
+  {
+    "id":1,
+    "firstName": "Yannis",
+    "lastName" : "Lanista",
+    "age": 20
+  },
+  {
+    "id":2,
+    "firstName": "Samir",
+    "lastName" : "Lanista",
+    "age": 15
+  },
+  {
+    "id":3,
+    "firstName": "Tsiory",
+    "lastName" : "Lanista",
+    "age": 19
+  },
+  {
+    "id":4,
+    "firstName": "Yasser",
+    "lastName" : "Lanista",
+    "age": 25
+  }
+]

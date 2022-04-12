@@ -5,11 +5,9 @@ const thingController = require('../controllers/thingController');
 exports.router = (function() {
     const router = express.Router()
 
-    router.route('/').get(thingController.user)
+    router.route('/user/:id').get(thingController.user)
     router.route('/users').get(thingController.users)
 
-    router.route('/test').get(thingController.test)
-    // router.route('/').get(thingController.index)
 
     return router
 })()

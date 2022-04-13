@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const  UserModel = require('../models/UserModel')
+const  {UserModel} = require('../models/UserModel')
 
 module.exports = {
     user: (req, res) => {

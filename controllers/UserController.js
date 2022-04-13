@@ -27,12 +27,12 @@ module.exports = {
         })
     },
     addUser: (req, res) => {
-        const user = new UserModel({
+        const User = new UserModel({
             _id: new mongoose.Types.ObjectId(),
             firstname: req.body.firstname,
             lastname: req.body.lastname,
         })
-        user.save((err, user) => {
+        User.save((err, user) => {
             if (err) {
                 res.status(500).render('error', {
                     error: err
@@ -41,5 +41,5 @@ module.exports = {
                 res.status(200).redirect('/user')
             }
         })
-    }
+    },
 }

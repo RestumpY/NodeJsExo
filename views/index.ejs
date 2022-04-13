@@ -1,13 +1,19 @@
 <%- include ('./layouts/header') %>
 <body>
-    <h1>Hello World</h1>
-    <p>Hello, <%= user.firstName  %> <%= user.lastName %></p>
+    <form action="/user" method="post">
+        <input type="text" name="firstname" id="firstname">
+        <input type="text" name="lastname" id="lastname">
+        <input type="submit" value="Submit">
+    </form>
+    <% if (users.length > 0) { %>
+        <ul>
+            <% users.map( user => { %>
+                <li><%= user.firstname %> <%= user.lastname %> <%= user.age %></li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>Aucun utilisateur</p>
+    <% } %>
 </body>
+</html>
 <%- include ('./layouts/footer') %>
-
-<!--
-    TODO : 
-    - 2 vues
-    - 1 vue qui affiche bonjour + nom du user
-    - 1 vue qui affiche une liste de users (nom, prenom, age) + une condition pour vérifier si il y a des users. sinon pas on affiche "aucun utilisateur"
--->

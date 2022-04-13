@@ -1,12 +1,12 @@
 const express = require('express');
-
-const thingController = require('../controllers/thingController');
+const UserController = require('../controllers/UserController');
 
 exports.router = (function() {
     const router = express.Router()
 
-    router.route('/user/:id').get(thingController.user)
-    router.route('/users').get(thingController.users)
+    router.get('/user', UserController.users);
+    router.post('/user', UserController.addUser);
+    router.get('/user/:id', UserController.user);
 
 
     return router

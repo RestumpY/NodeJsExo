@@ -4,15 +4,17 @@
 
 <% if (users.length > 0) { %>
   <h3> Tous les utilisateurs</h3>
-  <table border="1" cellpadding="15"> 
-    <tr>
-        <th>ID</th>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Age</th>
-    </tr>
-  
 
+  <table class="table">
+    <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Age</th>
+        </tr>
+    </thead>
+<tbody>
       <% users.map( user => { %>
         <tr></tr>
           <td><%= user.id %></td>
@@ -22,7 +24,7 @@
           <td><a href ="/user/show/<%=user.id%>"><i class="fa-solid fa-eye"></i></a></td>
         </tr>
       <% }) %>
-
+    </tbody>
   </table>
 <% } else { %>
   <p>Aucun utilisateur</p>

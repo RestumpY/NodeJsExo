@@ -15,9 +15,9 @@
             <td><%= article.id %></td>
             <td><%= article.title %> </td>
             <td><%= article.description %></td>
-            <% if (user != undefined) { %>
-            <td><%= user.firstname %> <%= user.lastname %></td>
-            <td><a href="/user/show/<%=user.id%>"><i class="fa-solid fa-eye"></i></a></td>
+            <% if (article.user != undefined) { %>
+            <td><%= article.user.firstname %> <%= article.user.lastname %></td>
+            <td><a href="/user/show/<%=article.user.id%>"><i class="fa-solid fa-eye"></i></a></td>
             <% }else{ %>
             <td>Aucun utilisateur</td>
             <% } %>

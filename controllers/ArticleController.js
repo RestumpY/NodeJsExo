@@ -17,6 +17,7 @@ module.exports = {
             if (!articles) {
               res.status(404).send('Aucun article trouvé trouvé')
             }
+            console.log(articles)
             res.status(200).render('index', {
               articles,
               users
@@ -75,9 +76,9 @@ updateArticle: (req,res)=>{
 
 showArticle: async(req,res) => {
 
-  const article = await ArticleModel.findOne( {_id: req.params.id})
-  const user = await UserModel.findById(article.user)
-  return res.status(200).render('showArticle',{article,user})
+  const article = await ArticleModel.findOne( {_id: req.params.id}).populate('user')
+
+  return res.status(200).render('showArticle',{article})
 }
 
 }

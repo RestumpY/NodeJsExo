@@ -19,13 +19,16 @@
                     <th scope="row"><%= article.id %></th>
                     <td><%= article.title %> </td>
                     <td><%= article.description %></td>
-                    <% users.map( user => { %>
-                        <% if (user.id == article.user){ %>
-                        <td><%= user.firstname %> <%= user.lastname %></td>
-                        <% } else {%>
-                            <TD> Aucun utilisateur</TD>
-                        <% } %>
-                    <%})%>
+                    <% if (article.user != null){ %>
+                        <% users.map( user => { %>
+                            <% if (user.id == article.user._id){ %>
+                                <td><%= user.firstname %> <%= user.lastname %></td>
+                            <%}%>
+
+                        <%})%>
+                    <%}%>
+                    
+                    
 
                     <td><a href="/article/show/<%=article.id%>"><i class="fa-solid fa-eye"></i></a></td>
                 </tr>

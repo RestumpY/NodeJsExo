@@ -8,6 +8,7 @@ const router = require('./routes/index').router
 app.set('view engine', 'ejs')
 app.use('/public', express.static('public'))
 
+app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
     
 

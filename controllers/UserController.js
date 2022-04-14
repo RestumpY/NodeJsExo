@@ -43,4 +43,28 @@ module.exports = {
             }
         })
     },
+    deleteUser: (req, res) => {
+        UserModel.deleteOne({id : req.params.id}, (err, user) => {
+            res.json({
+                user
+            })
+        })
+    },
+    
+    updateUser: (req,res)=>{
+    
+      UserModel.findOneAndUpdate(
+        { _id: req.params.id },
+        { $set: { firstname: req.body.firstname, lastname: req.body.lastname, age : req.body.age } },
+        (err, user) => {
+          res.json({
+              user
+          })
+      })
+    },
+    
+    showUser: async(req,res) => {
+      const user = await UserModel.findOne( {_id: req.params.id})
+      return res.status(200).render('showUser',{user})
+    }
 }

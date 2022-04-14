@@ -1,0 +1,23 @@
+<%- include ('./layouts/header') %>
+<body>
+    <h1>Voici l'article <b><%= article.title %></b> </h1>
+
+    <table border="1" cellpadding="15"> 
+      <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Auteur</th>
+      </tr>
+
+              <tr>
+              <td><%= article.id %></td>
+              <td><%= article.title %> </td>
+              <td><%= article.description %></td>
+              <td><%= user.firstname %> <%= user.lastname %></td>
+              <td><a href ="/user/show/<%=user.id%>"><i class="fa-solid fa-eye"></i></a></td>
+              
+
+          </tr>
+</body>
+<%- include ('./layouts/footer') %>

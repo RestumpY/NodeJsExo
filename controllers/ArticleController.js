@@ -37,6 +37,7 @@ module.exports = {
           description: req.body.description,
           user: user.id,
         })
+        console.log(user)
         Article.save((err, article) => {
           if (err) {
             res.status(500).render('error', {

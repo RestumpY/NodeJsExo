@@ -3,41 +3,49 @@
 <body>
     <h3> Tous les articles</h3>
     <% if (articles.length > 0) { %>
-    <table border="1" cellpadding="15">
-        <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Auteur</th>
-        </tr>
 
-        <% articles.map( article => { %>
-        <tr></tr>
-        <td><%= article.id %></td>
-        <td><%= article.title %> </td>
-        <td><%= article.description %></td>
-        <% users.map( user => { %>
-        <% if (user.id == article.user){ %>
-        <td><%= user.firstname %> <%= user.lastname %></td>
-        <%}%>
-<%})%>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Auteur</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% articles.map( article => { %>
+                <tr>
+                    <th scope="row"><%= article.id %></th>
+                    <td><%= article.title %> </td>
+                    <td><%= article.description %></td>
+                    <% users.map( user => { %>
+                        <% if (user.id == article.user){ %>
+                        <td><%= user.firstname %> <%= user.lastname %></td>
+                        <% } else {%>
+                            <TD> Aucun utilisateur</TD>
+                        <% } %>
+                    <%})%>
 
-        <td><a href="/article/show/<%=article.id%>"><i class="fa-solid fa-eye"></i></a></td>
-        </tr>
-        <% }) %>
-
+                    <td><a href="/article/show/<%=article.id%>"><i class="fa-solid fa-eye"></i></a></td>
+                </tr>
+            <% }) %>
+        </tbody>
     </TABLE>
-    <br>
-
+  
     <% } else { %>
     <p>Aucun article</p>
     <% } %>
+
+
     <br>
+
+
     <h3> Créer un article</h3>
-    <form action="/" method="post">
+    <form action="/article" method="post">
         <input type="text" placeholder="Titre" name="title">
         <input type="text" placeholder="Description" name="description" ">
-        <select name = " usersList">
+        <select name = "usersList">
         <% if (users.length > 0) { %>
         <% users.map( user => { %>
         <option value="<%= user.id %>"><%= user.firstname %> <%= user.lastname %></option>

@@ -7,7 +7,7 @@ exports.router = (function() {
 
     
     router.get('/',ArticleController.articles);
-    router.post('/', ArticleController.addArticle);
+    router.post('/article', ArticleController.addArticle);
     router.get('/article/show/:id',ArticleController.showArticle);
     router.route('/article/:id').delete(ArticleController.deleteArticle);
     router.route('/article/:id').put(ArticleController.updateArticle);

@@ -1,19 +1,19 @@
 <%- include ('./layouts/header') %>
+
 <body>
     <h1>Bonjour <b><%= user.firstname %></b> </h1>
 
-    <table border="1" cellpadding="15"> 
-      <tr>
-          <th>ID</th>
-          <th>Nom</th>
-          <th>Prénom</th>
-          <th>Age</th>
-      </tr>
-
-              <td><%= user.id %></td>
-              <td><%= user.firstname %></td>
-              <td><%= user.lastname %></td>
-              <td><%= user.age %></td>
-          </tr>
+    <table border="1" cellpadding="15">
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Age</th>
+        </tr>
+            <td><%= user.id %></td>
+            <td><%= user.firstname %></td>
+            <td><%= user.lastname %></td>
+            <td><%= user.age %></td>
+        </tr>
 </body>
 <%- include ('./layouts/footer') %>

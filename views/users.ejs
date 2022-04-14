@@ -6,16 +6,16 @@
   <h3> Tous les utilisateurs</h3>
   <table border="1" cellpadding="15"> 
     <tr>
-        <th>User n°</th>
+        <th>ID</th>
         <th>Nom</th>
         <th>Prénom</th>
         <th>Age</th>
     </tr>
   
-    <% i = 1 %>
+
       <% users.map( user => { %>
         <tr></tr>
-          <td><%= i++ %></td>
+          <td><%= user.id %></td>
           <td><%= user.firstname %></td>
           <td> <%= user.lastname %></td>
           <td> <%= user.age %> ans</td>

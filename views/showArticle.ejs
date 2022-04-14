@@ -3,14 +3,15 @@
 <body>
     <h1>Voici l'article <b><%= article.title %></b> </h1>
 
-    <table border="1" cellpadding="15">
+    <table class="table">
+        <thead>
         <tr>
             <th>ID</th>
             <th>Title</th>
             <th>Description</th>
             <th>Auteur</th>
         </tr>
-
+</thead><tbody>
         <tr>
             <td><%= article.id %></td>
             <td><%= article.title %> </td>
@@ -22,5 +23,6 @@
             <td>Aucun utilisateur</td>
             <% } %>
         </tr>
+    </tbody>
 </body>
 <%- include ('./layouts/footer') %>

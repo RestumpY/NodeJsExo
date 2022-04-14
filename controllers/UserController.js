@@ -20,7 +20,7 @@ module.exports = {
                 if (!users) {
                     res.status(404).send('Aucun auteur trouvé')
                 }
-                res.status(200).render('index', {
+                res.status(200).render('users', {
                     users
                 })
             }
@@ -31,6 +31,7 @@ module.exports = {
             _id: new mongoose.Types.ObjectId(),
             firstname: req.body.firstname,
             lastname: req.body.lastname,
+            age : req.body.age,
         })
         User.save((err, user) => {
             if (err) {
